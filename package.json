@@ -1,6 +1,6 @@
 {
   "name": "@witty-services/ngx-common",
-  "version": "1.0.5",
+  "version": "1.0.0-rc.1",
   "description": "Type repository core library",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/witty-services/rxjs-common"
+    "url": "http://github.com/witty-services/ngx-common"
   },
   "scripts": {
     "clean": "rm -R -f dist",
