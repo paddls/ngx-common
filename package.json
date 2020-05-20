@@ -23,11 +23,13 @@
   "author": "Romain MARTINEAU",
   "license": "MIT",
   "peerDependencies": {
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "@angular/core": ">= 6.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.17",
+    "@angular/core": "^9.0.0",
     "reflect-metadata": "^0.1.13",
     "jest": "^24.9.0",
     "rxjs": "^6.5.4",
