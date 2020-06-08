@@ -29,10 +29,3 @@ jobs:
         CI: true
     - name: Linter
       run: npm run lint
-    - name: Test
-      run: npm run test
-    - name: Send coverage to Coverall
-      uses: coverallsapp/github-action@v1.0.1
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./coverage/lcov.info
