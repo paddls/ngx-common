@@ -22,6 +22,26 @@ npm install --save @witty-services/ngx-common
 
 ## Get Started
 
+### @Log
+
+Decorator ```@Log``` allow you to debug method without modifying internal code.
+
+Usage:
+```typescript
+import {Log} from '@witty-services/ngx-commonn';
+
+class MyClass {
+
+  @Log()
+  public myMethod(): any {
+  
+  }
+}
+
+new MyClass().myMethod();
+// => should log timestamp, class, method, args and returned value
+```
+
 ### @OnAttributeChange
 
 Decorator ```@OnAttributeChange``` allow you to observe a class attribute with an observable.
