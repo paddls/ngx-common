@@ -2,7 +2,7 @@ import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 
 export function Log(active: boolean = true): MethodDecorator {
-  return function(target: any, propertyKey: any, descriptor: any): any {
+  return (target: any, propertyKey: any, descriptor: any): any => {
     if (active) {
       const originalMethod: any = descriptor.value;
 
@@ -28,5 +28,5 @@ export function Log(active: boolean = true): MethodDecorator {
       };
     }
     return descriptor;
-  }
+  };
 }

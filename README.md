@@ -12,6 +12,7 @@
 
 * [How to install](#how-to-install)
 * [Get Started](#get-started)
+    * [@Log](#log)
     * [@OnAttributeChange](#onattributechange)
 
 ## How to install
