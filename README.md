@@ -83,7 +83,7 @@ class MyComponent {
 
 ### takeUntilDestroy
 
-Decorator ```@DestroyListener``` configure your component, directive, pipe or service to listen for auto unsubscribe combining with takeUntilDestroy.
+takeUntilDestroy will automatically unsubscribe on component destroy.
 
 Usage:
 ```typescript

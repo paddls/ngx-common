@@ -1,6 +1,6 @@
 {
   "name": "@witty-services/ngx-common",
-  "version": "1.0.1-rc.3",
+  "version": "1.0.1-rc.4",
   "description": "Type repository core library",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
