@@ -14,7 +14,7 @@
 * [Get Started](#get-started)
     * [@Log](#log)
     * [@OnAttributeChange](#onattributechange)
-    * [@DestroyListener](#destroylistener)
+    * [takeUntilDestroy](#takeuntildestroy)
 
 ## How to install
 
@@ -61,10 +61,9 @@ Decorator ```@OnAttributeChange``` allow you to observe a class attribute with a
 
 Usage:
 ```typescript
-import {DestroyListener, takeUntilDestroy, OnAttributeChange} from '@witty-services/ngx-common';
+import {takeUntilDestroy, OnAttributeChange} from '@witty-services/ngx-common';
 import {Observable} from 'rxjs';
 
-@DestroyListener()
 class MyComponent {
 
   public attribute: string;
@@ -82,16 +81,15 @@ class MyComponent {
 }
 ```
 
-### @DestroyListener
+### takeUntilDestroy
 
 Decorator ```@DestroyListener``` configure your component, directive, pipe or service to listen for auto unsubscribe combining with takeUntilDestroy.
 
 Usage:
 ```typescript
-import {DestroyListener, takeUntilDestroy} from '@witty-services/ngx-common';
+import {takeUntilDestroy} from '@witty-services/ngx-common';
 import {interval} from 'rxjs';
 
-@DestroyListener() // annotate component to listen for destroy event
 class MyComponent {
 
   public constructor() {
