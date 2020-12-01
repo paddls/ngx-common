@@ -14,6 +14,7 @@
 * [Get Started](#get-started)
     * [@Log](#log)
     * [@OnAttributeChange](#onattributechange)
+    * [@DestroyListener](#destroylistener)
 
 ## How to install
 
@@ -60,30 +61,43 @@ Decorator ```@OnAttributeChange``` allow you to observe a class attribute with a
 
 Usage:
 ```typescript
-import {ObservableDestroy, OnAttributeChange} from '@witty-services/ngx-common';
+import {DestroyListener, takeUntilDestroy, OnAttributeChange} from '@witty-services/ngx-common';
 import {Observable} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
 
-class MyComponent extends ObservableDestroy {
+@DestroyListener()
+class MyComponent {
 
   public attribute: string;
 
   @OnAttributeChange('attribute')
-  public myAttribute$: Observable<string>;
+  public myAttribute$: Observable<string>; // emit value on each modification of the referent attribute
 
   public constructor() {
-    super();
-
     this.myAttribute$.pipe(
-      takeUntil(this.onDestroy$),
-    ).subscribe((val: string) => console.log(val));
+      takeUntilDestroy(this),
+    ).subscribe(() => {
+      // do some stuff
+    });
   } 
 }
+```
 
-const myObject: MyComponent = new MyComponent();
-myObject.attribute = 'Hello';
-myObject.ngOnDestroy();
-myObject.attribute = 'World';
+### @DestroyListener
 
-// output: null, 'Hello'
+Decorator ```@DestroyListener``` configure your component, directive, pipe or service to listen for auto unsubscribe combining with takeUntilDestroy.
+
+Usage:
+```typescript
+import {DestroyListener, takeUntilDestroy} from '@witty-services/ngx-common';
+import {interval} from 'rxjs';
+
+@DestroyListener() // annotate component to listen for destroy event
+class MyComponent {
+
+  public constructor() {
+    interval(100).pipe(
+      takeUntilDestroy(this), // this observable will be unsubscribe automatically on component destroy
+    ).subscribe();
+  } 
+}
 ```
