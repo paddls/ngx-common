@@ -30,6 +30,7 @@ Decorator ```@Log``` allow you to debug method without modifying internal code.
 Usage:
 ```typescript
 import {Log} from '@witty-services/ngx-commonn';
+import {environment} from '../../environment.ts';
 
 class MyClass {
 
@@ -37,10 +38,20 @@ class MyClass {
   public myMethod(): any {
   
   }
+
+  @Log(!environment.production) // the log should be disabled on production
+  public myMethod(): any {
+  
+  }
+
+  @Log(true, 'red') // override default log color
+  public myMethod(): any {
+  
+  }
 }
 
 new MyClass().myMethod();
-// => should log timestamp, class, method, args and returned value
+// => should log duration, class, method, args and returned value
 ```
 
 ### @OnAttributeChange
