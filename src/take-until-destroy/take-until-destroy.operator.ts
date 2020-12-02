@@ -27,8 +27,11 @@ export function getOnDestroy(instance: any): Subject<void> {
 }
 
 export function setupOnDestroy(instance: any): void {
-  if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance)) {
+  if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance.__proto__)) {
     instance.__proto__.ngOnDestroy = onDestroyListener(instance.__proto__.ngOnDestroy);
+    Reflect.defineMetadata(DESTROY_LISTENER_METADATA_KEY, true, instance.__proto__);
+  }
+  if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance)) {
     Reflect.defineMetadata(DESTROY_LISTENER_METADATA_KEY, new Subject<void>(), instance);
   }
 }
