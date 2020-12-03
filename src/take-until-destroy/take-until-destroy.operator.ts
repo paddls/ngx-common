@@ -36,7 +36,7 @@ export function setupOnDestroy(instance: any): void {
   }
 }
 
-export function takeUntilDestroy<I, O>(instance: any): MonoTypeOperatorFunction<unknown> {
+export function takeUntilDestroy<I>(instance: any): MonoTypeOperatorFunction<I> {
   setupOnDestroy(instance);
   return takeUntil(getOnDestroy(instance));
 }
