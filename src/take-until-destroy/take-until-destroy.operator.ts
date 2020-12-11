@@ -8,9 +8,12 @@ import {MonoTypeOperatorFunction, Subject} from 'rxjs';
 const DESTROY_LISTENER_METADATA_KEY: string = 'ngx-common:take-until-destroy';
 
 function onDestroyComplete(instance: any): void {
-  getOnDestroy(instance).next();
-  getOnDestroy(instance).complete();
-  Reflect.deleteMetadata(DESTROY_LISTENER_METADATA_KEY, instance);
+  const onDestroy$: Subject<void> = getOnDestroy(instance);
+  if (onDestroy$) {
+    getOnDestroy(instance).next();
+    getOnDestroy(instance).complete();
+    Reflect.deleteMetadata(DESTROY_LISTENER_METADATA_KEY, instance);
+  }
 }
 
 function onDestroyListener(ngOnDestroy: () => void): () => void {
