@@ -3,43 +3,15 @@
  * @param instance the component instance
  */
 import {takeUntil} from 'rxjs/operators';
-import {MonoTypeOperatorFunction, Subject} from 'rxjs';
+import {MonoTypeOperatorFunction, Observable} from 'rxjs';
+import {DESTROY_LISTENER_METADATA_KEY, getOnDestroy} from './on-destroy-listener.decorator';
 
-const DESTROY_LISTENER_METADATA_KEY: string = 'ngx-common:take-until-destroy';
-
-function onDestroyComplete(instance: any): void {
-  const onDestroy$: Subject<void> = getOnDestroy(instance);
-  if (onDestroy$) {
-    getOnDestroy(instance).next();
-    getOnDestroy(instance).complete();
-    Reflect.deleteMetadata(DESTROY_LISTENER_METADATA_KEY, instance);
-  }
-}
-
-function onDestroyListener(ngOnDestroy: () => void): () => void {
-  return function(): void {
-    if (ngOnDestroy) {
-      ngOnDestroy.call(this);
+export function takeUntilDestroy<T>(instance: any): MonoTypeOperatorFunction<T> {
+    const constructor: any = instance.__proto__.constructor;
+    if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, constructor)) {
+        console.error(`You should annotate ${constructor.name} class with @OnDestroyListener`,);
     }
-    onDestroyComplete(this);
-  };
-}
+    const onDestroy$: Observable<void> = getOnDestroy(instance);
 
-export function getOnDestroy(instance: any): Subject<void> {
-  return Reflect.getOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance);
-}
-
-export function setupOnDestroy(instance: any): void {
-  if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance.__proto__)) {
-    instance.__proto__.ngOnDestroy = onDestroyListener(instance.__proto__.ngOnDestroy);
-    Reflect.defineMetadata(DESTROY_LISTENER_METADATA_KEY, true, instance.__proto__);
-  }
-  if (!Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, instance)) {
-    Reflect.defineMetadata(DESTROY_LISTENER_METADATA_KEY, new Subject<void>(), instance);
-  }
-}
-
-export function takeUntilDestroy<I>(instance: any): MonoTypeOperatorFunction<I> {
-  setupOnDestroy(instance);
-  return takeUntil(getOnDestroy(instance));
+    return takeUntil(onDestroy$);
 }
