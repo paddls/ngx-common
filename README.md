@@ -83,13 +83,14 @@ class MyComponent {
 
 ### takeUntilDestroy
 
-takeUntilDestroy will automatically unsubscribe on component destroy.
+takeUntilDestroy will automatically unsubscribe on component, directive destroy.
 
 Usage:
 ```typescript
 import {takeUntilDestroy} from '@witty-services/ngx-common';
 import {interval} from 'rxjs';
 
+@OnDestroyListener()
 class MyComponent {
 
   public constructor() {
