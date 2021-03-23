@@ -4,13 +4,14 @@
     "declarationDir": "./dist",
     "experimentalDecorators": true,
     "module": "commonjs",
+    "inlineSources": true,
     "sourceMap": true,
     "lib": [
       "es2018",
       "dom"
     ],
     "outDir": "./dist",
-    "target": "es5",
+    "target": "es2015",
     "moduleResolution": "node"
   },
   "typedocOptions": {
