@@ -1,13 +1,13 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 @NgModule()
-export class NgxLocalStorage {
+export class NgxLocalStorageModule {
 
-  public static forRoot(): ModuleWithProviders<NgxLocalStorage> {
+  public static forRoot(): ModuleWithProviders<NgxLocalStorageModule> {
     return {
-      ngModule: NgxLocalStorage,
+      ngModule: NgxLocalStorageModule,
       providers: [
-        NgxLocalStorage
+        NgxLocalStorageModule
       ]
     };
   }

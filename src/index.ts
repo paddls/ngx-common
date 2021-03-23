@@ -12,7 +12,7 @@ export { NotImplementedError } from './error-handler/model/not-implemented.error
 export { RuntimeError } from './error-handler/model/runtime.error';
 export { NgxErrorHandlerModule, ERROR_HANDLER_TOKEN } from './error-handler/error-handler.module';
 // local-storage
-export { NgxLocalStorage } from './local-storage/local-storage.module';
+export { NgxLocalStorageModule } from './local-storage/local-storage.module';
 export { NgxLocalStorageService } from './local-storage/local-storage.service';
 // config
 export { NgxConfigModule, CONFIG_URL_TOKEN } from './config/config.module';
