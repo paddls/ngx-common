@@ -6,7 +6,7 @@ export const CONFIG_URL_TOKEN: InjectionToken<string> = new InjectionToken('CONF
 @NgModule()
 export class NgxConfigModule {
 
-  public static forRoot(url: string): ModuleWithProviders {
+  public static forRoot(url: string): ModuleWithProviders<NgxConfigModule> {
     return {
       ngModule: NgxConfigModule,
       providers: [

@@ -17,7 +17,7 @@ export class NgxErrorHandlerModule {
     return NgxErrorHandlerModule.injector;
   }
 
-  public static forRoot(handlers: Type<ErrorHandler>[]): ModuleWithProviders {
+  public static forRoot(handlers: Type<ErrorHandler>[]): ModuleWithProviders<NgxErrorHandlerModule> {
     return {
       ngModule: NgxErrorHandlerModule,
       providers: [
