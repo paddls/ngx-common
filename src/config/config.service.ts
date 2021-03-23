@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { hardCache } from '@witty-services/rxjs-common';
-import { CONFIG_URL_TOKEN } from './ngx-config.module';
+import { CONFIG_URL_TOKEN } from './config.module';
 
 @Injectable()
 export class NgxConfigService {
