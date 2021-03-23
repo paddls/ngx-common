@@ -1,102 +1,31 @@
 # NgxCommon
 
-![ngx-common-ci](https://github.com/witty-services/ngx-common/workflows/ngx-common-build/badge.svg)
-[![npm version](https://badge.fury.io/js/%40witty-services%2Fngx-common.svg)](https://badge.fury.io/js/%40witty-services%2Fngx-common)
-![GitHub](https://img.shields.io/github/license/witty-services/ngx-common)
-![GitHub repo size](https://img.shields.io/github/repo-size/witty-services/ngx-common)
-![GitHub last commit](https://img.shields.io/github/last-commit/witty-services/ngx-common)
-![GitHub issues](https://img.shields.io/github/issues/witty-services/ngx-common)
-![GitHub top language](https://img.shields.io/github/languages/top/witty-services/ngx-common)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Summary
+## Development server
 
-* [How to install](#how-to-install)
-* [Get Started](#get-started)
-    * [@Log](#log)
-    * [@OnAttributeChange](#onattributechange)
-    * [takeUntilDestroy](#takeuntildestroy)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
+any of the source files.
 
-## How to install
+## Code scaffolding
 
-```
-npm install --save @witty-services/ngx-common
-```
+Run `ng generate component component-name` to generate a new component. You can also
+use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Get Started
+## Build
 
-### @Log
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag
+for a production build.
 
-Decorator ```@Log``` allow you to debug method without modifying internal code.
+## Running unit tests
 
-Usage:
-```typescript
-import {Log} from '@witty-services/ngx-commonn';
-import {environment} from '../../environment.ts';
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-class MyClass {
+## Running end-to-end tests
 
-  @Log()
-  public myMethod(): any {
-  
-  }
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-  @Log(!environment.production) // the log should be disabled on production
-  public myMethod(): any {
-  
-  }
+## Further help
 
-  @Log(true, 'red') // override default log color
-  public myMethod(): any {
-  
-  }
-}
-
-new MyClass().myMethod();
-// => should log duration, class, method, args and returned value
-```
-
-### @OnAttributeChange
-
-Decorator ```@OnAttributeChange``` allow you to observe a class attribute with an observable.
-
-Usage:
-```typescript
-import {takeUntilDestroy, OnAttributeChange} from '@witty-services/ngx-common';
-import {Observable} from 'rxjs';
-
-class MyComponent {
-
-  public attribute: string;
-
-  @OnAttributeChange('attribute')
-  public myAttribute$: Observable<string>; // emit value on each modification of the referent attribute
-
-  public constructor() {
-    this.myAttribute$.pipe(
-      takeUntilDestroy(this),
-    ).subscribe(() => {
-      // do some stuff
-    });
-  } 
-}
-```
-
-### takeUntilDestroy
-
-takeUntilDestroy will automatically unsubscribe on component, directive destroy.
-
-Usage:
-```typescript
-import {takeUntilDestroy} from '@witty-services/ngx-common';
-import {interval} from 'rxjs';
-
-@OnDestroyListener()
-class MyComponent {
-
-  public constructor() {
-    interval(100).pipe(
-      takeUntilDestroy(this), // this observable will be unsubscribe automatically on component destroy
-    ).subscribe();
-  } 
-}
-```
+To get more help on the Angular CLI use `ng help` or go check out
+the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

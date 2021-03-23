@@ -1,5 +1,5 @@
-import {Log} from './log.decorator';
-import {Observable, of} from 'rxjs';
+import { Log } from './log.decorator';
+import { Observable, of } from 'rxjs';
 import DoneCallback = jest.DoneCallback;
 
 describe('LogDecorator', () => {

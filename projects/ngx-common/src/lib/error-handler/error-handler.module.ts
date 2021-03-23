@@ -4,6 +4,7 @@ import { DefaultErrorHandler } from './handler/default-error.handler';
 
 export const ERROR_HANDLER_TOKEN: InjectionToken<ErrorHandler> = new InjectionToken<ErrorHandler>('ERROR_HANDLER');
 
+// @dynamic
 @NgModule()
 export class NgxErrorHandlerModule {
 

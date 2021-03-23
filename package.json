@@ -1,47 +1,49 @@
 {
   "name": "@witty-services/ngx-common",
-  "version": "1.0.4",
-  "description": "Type repository core library",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/witty-services/ngx-common"
-  },
+  "version": "0.0.0",
   "scripts": {
-    "clean": "rm -R -f dist",
-    "build": "npm run clean && npm run lint && tsc",
-    "build:watch": "tsc -w",
-    "lint": "tslint -p tsconfig.json",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:ci": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "publish:lib": "npm run build && npm publish --access=public"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint"
   },
-  "author": "Romain MARTINEAU",
-  "license": "MIT",
-  "peerDependencies": {
-    "reflect-metadata": "^0.1.13",
-    "@angular/core": ">= 6.0.0",
-    "@witty-services/rxjs-common": ">= 1.0.9",
-    "rxjs": ">= 6.0.0"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~11.2.6",
+    "@angular/common": "~11.2.6",
+    "@angular/compiler": "~11.2.6",
+    "@angular/core": "~11.2.6",
+    "@angular/forms": "~11.2.6",
+    "@angular/platform-browser": "~11.2.6",
+    "@angular/platform-browser-dynamic": "~11.2.6",
+    "@angular/router": "~11.2.6",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular/common": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@types/jest": "^24.0.23",
+    "@angular-devkit/build-angular": "~0.1102.5",
+    "@angular/cli": "~11.2.5",
+    "@angular/compiler-cli": "~11.2.6",
+    "@types/jasmine": "~3.6.0",
     "@types/lodash": "^4.14.168",
-    "@types/node": "^12.12.17",
+    "@types/node": "^12.11.1",
     "@witty-services/rxjs-common": "^1.0.9",
-    "jest": "^24.9.0",
+    "codelyzer": "^6.0.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
     "lodash": "^4.17.21",
+    "ng-packagr": "^11.0.0",
+    "protractor": "~7.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.4",
-    "ts-jest": "^24.2.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.3"
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.1.5"
   }
 }

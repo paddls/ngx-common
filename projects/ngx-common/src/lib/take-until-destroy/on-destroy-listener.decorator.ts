@@ -1,4 +1,4 @@
-import {Subject} from 'rxjs';
+import { Subject } from 'rxjs';
 
 export const DESTROY_LISTENER_METADATA_KEY: string = 'ngx-common:take-until-destroy';
 

@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 
-import {interval, Subscription} from 'rxjs';
-import {takeUntilDestroy} from './take-until-destroy.operator';
-import {OnDestroy} from '@angular/core';
+import { interval, Subscription } from 'rxjs';
+import { takeUntilDestroy } from './take-until-destroy.operator';
+import { OnDestroy } from '@angular/core';
 
 describe('takeUntilDestroy', () => {
 

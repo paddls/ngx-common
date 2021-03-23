@@ -1,0 +1,15 @@
+{
+  "name": "@witty-services/ngx-common",
+  "version": "2.0.0-rc.1",
+  "peerDependencies": {
+    "@angular/common": ">= 6.0.0",
+    "@angular/core": ">= 6.0.0",
+    "@witty-services/rxjs-common": ">= 1.0.9",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": ">= 6.0.0",
+    "lodash": ">= 4.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

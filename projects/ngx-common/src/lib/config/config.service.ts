@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { hardCache } from '@witty-services/rxjs-common';
-import { CONFIG_URL_TOKEN } from './config.module';
+import { CONFIG_URL_TOKEN } from './config.token';
 
 @Injectable()
 export class NgxConfigService {
@@ -23,7 +23,7 @@ export class NgxConfigService {
 
   public getConfig(key: string): Observable<any> {
     return this.config$.pipe(
-      pluck(key),
+      pluck(key)
     );
   }
 

@@ -1,7 +1,9 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "whitespace": [true],
+    "whitespace": [
+      true
+    ],
     "array-type": false,
     "arrow-parens": false,
     "only-arrow-functions": false,
@@ -18,7 +20,11 @@
       true,
       200
     ],
-    "member-access": [true, "check-accessor", "check-constructor"],
+    "member-access": [
+      true,
+      "check-accessor",
+      "check-constructor"
+    ],
     "member-ordering": [
       true,
       {
