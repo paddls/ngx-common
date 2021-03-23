@@ -27,7 +27,8 @@ export class NgxErrorHandlerModule {
         DefaultErrorHandler,
         ...handlers.map((handler: Type<ErrorHandler>) => ({
           provide: ERROR_HANDLER_TOKEN,
-          useClass: handler
+          useClass: handler,
+          multi: true
         }))
       ]
     };
