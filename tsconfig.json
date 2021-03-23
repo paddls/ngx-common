@@ -3,7 +3,7 @@
     "declaration": true,
     "declarationDir": "./dist",
     "experimentalDecorators": true,
-    "module": "commonjs",
+    "module": "esnext",
     "inlineSources": true,
     "sourceMap": true,
     "lib": [
@@ -12,7 +12,9 @@
     ],
     "outDir": "./dist",
     "target": "es2015",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "importHelpers": true
   },
   "typedocOptions": {
     "mode": "modules",
