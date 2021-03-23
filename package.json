@@ -26,14 +26,19 @@
   "peerDependencies": {
     "reflect-metadata": "^0.1.13",
     "@angular/core": ">= 6.0.0",
+    "@witty-services/rxjs-common": ">= 1.0.9",
     "rxjs": ">= 6.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.17",
+    "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
-    "reflect-metadata": "^0.1.13",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^12.12.17",
+    "@witty-services/rxjs-common": "^1.0.9",
     "jest": "^24.9.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
     "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",

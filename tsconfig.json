@@ -3,7 +3,7 @@
     "declaration": true,
     "declarationDir": "./dist",
     "experimentalDecorators": true,
-    "module": "commonjs",
+    "module": "es2020",
     "sourceMap": true,
     "lib": ["es2018", "dom"],
     "outDir": "./dist",
