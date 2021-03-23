@@ -1,8 +1,8 @@
 import { InjectionToken, Injector, ModuleWithProviders, NgModule, Type } from '@angular/core';
-import { IErrorHandler } from './model/error-handler.model';
+import { ErrorHandler } from './model/error-handler.model';
 import { DefaultErrorHandler } from './handler/default-error.handler';
 
-export const ERROR_HANDLER_TOKEN: InjectionToken<IErrorHandler> = new InjectionToken<IErrorHandler>('ERROR_HANDLER');
+export const ERROR_HANDLER_TOKEN: InjectionToken<ErrorHandler> = new InjectionToken<ErrorHandler>('ERROR_HANDLER');
 
 @NgModule()
 export class NgxErrorHandlerModule {
@@ -17,12 +17,12 @@ export class NgxErrorHandlerModule {
     return NgxErrorHandlerModule.injector;
   }
 
-  public static forRoot(handlers: Type<IErrorHandler>[]): ModuleWithProviders {
+  public static forRoot(handlers: Type<ErrorHandler>[]): ModuleWithProviders {
     return {
       ngModule: NgxErrorHandlerModule,
       providers: [
         DefaultErrorHandler,
-        ...handlers.map((handler: Type<IErrorHandler>) => ({
+        ...handlers.map((handler: Type<ErrorHandler>) => ({
           provide: ERROR_HANDLER_TOKEN,
           useClass: handler
         }))
