@@ -20,7 +20,7 @@ export function OnAttributeChange<T, R>(defaultAttribute: string = null): any {
     if(!isValid) {
       throw new Error('Invalid OnAttributeChange property: it should match "[a-zA-Z0-9_]$" or been specified as a parameter.');
     }
-    const attribute = defaultAttribute || propertyKey.slice(0, -1);
+    const attribute: string = defaultAttribute || propertyKey.slice(0, -1);
       Object.defineProperty(target.constructor.prototype, attribute, {
       get(): any {
         initializeAttribute(attribute, this);
