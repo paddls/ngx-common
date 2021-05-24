@@ -18,7 +18,7 @@ export function OnAttributeChange<T, R>(defaultAttribute: string = null): any {
   return (target: any, propertyKey: string) => {
     const isValid: boolean = !!defaultAttribute || new RegExp('^\\w+\\$$').test(propertyKey);
     if(!isValid) {
-      throw new Error('Invalid OnAttributeChange property: it should match "[a-zA-Z0-9_]$" or been specified as a parameter.');
+      throw new Error('Invalid OnAttributeChange property: it should end with "$" or been specified as a parameter.');
     }
     const attribute: string = defaultAttribute || propertyKey.slice(0, -1);
       Object.defineProperty(target.constructor.prototype, attribute, {

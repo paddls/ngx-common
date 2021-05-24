@@ -27,3 +27,5 @@ jobs:
         CI: true
     - name: Linter
       run: npm run lint
+    - name: Test
+      run: npm run test
