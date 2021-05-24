@@ -1,6 +1,5 @@
 import { Log } from './log.decorator';
 import { Observable, of } from 'rxjs';
-import DoneCallback = jest.DoneCallback;
 
 describe('LogDecorator', () => {
   class Test {
@@ -28,7 +27,7 @@ describe('LogDecorator', () => {
     expect(console.log).toHaveBeenCalledTimes(2);
   });
 
-  it('should log promise', (done: DoneCallback) => {
+  it('should log promise', (done: DoneFn) => {
     spyOn(console, 'log').and.callThrough();
 
     new Test().doItAsync(3).then(() => {
@@ -37,7 +36,7 @@ describe('LogDecorator', () => {
     });
   });
 
-  it('should log rx', (done: DoneCallback) => {
+  it('should log rx', (done: DoneFn) => {
     spyOn(console, 'log').and.callThrough();
 
     new Test().doItRx(3).subscribe(() => {
