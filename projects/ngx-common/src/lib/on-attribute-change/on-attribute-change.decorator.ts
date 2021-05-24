@@ -14,9 +14,14 @@ function initializeAttribute(attribute: string, instance: any): void {
   }
 }
 
-export function OnAttributeChange<T, R>(attribute: string): any {
+export function OnAttributeChange<T, R>(defaultAttribute: string = null): any {
   return (target: any, propertyKey: string) => {
-    Object.defineProperty(target.constructor.prototype, attribute, {
+    const isValid: boolean = !!defaultAttribute || new RegExp('^\\w+\\$$').test(propertyKey);
+    if(!isValid) {
+      throw new Error('Invalid OnAttributeChange property: it should match "[a-zA-Z0-9_]$" or been specified as a parameter.');
+    }
+    const attribute = defaultAttribute || propertyKey.slice(0, -1);
+      Object.defineProperty(target.constructor.prototype, attribute, {
       get(): any {
         initializeAttribute(attribute, this);
 
