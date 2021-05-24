@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "test:ci": "ng test -- --browsers=ChromeHeadless --no-sandbox",
+    "test:ci": "ng test -- --browsers=ChromeHeadless",
     "lint": "ng lint"
   },
   "private": true,
