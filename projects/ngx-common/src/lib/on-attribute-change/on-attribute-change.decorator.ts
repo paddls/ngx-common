@@ -30,7 +30,7 @@ export function OnAttributeChange<T, R>(defaultAttribute: string = null): any {
       set(value: any): void {
         initializeAttribute(attribute, this);
 
-        Reflect.getOwnMetadata(`${ON_ATTRIBUTE_CHANGE_METADATA_KEY}:${attribute}`, this).next(value);
+        Reflect.getOwnMetadata(`${ ON_ATTRIBUTE_CHANGE_METADATA_KEY }:${ attribute }`, this)?.next(value);
       },
       enumerable: true,
       configurable: true
