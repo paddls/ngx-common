@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import {OnAttributeChange} from './on-attribute-change.decorator';
 import {Observable} from 'rxjs';
-import {ifNotNull} from '@witty-services/rxjs-common';
+import {ifNotNull} from '@paddls/rxjs-common';
 
 describe('OnAttributeChangeDecorator', () => {
   it('should send value to implicit property', (done: DoneFn) => {

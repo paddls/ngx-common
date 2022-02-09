@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { get } from 'lodash';
 import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { hardCache } from '@witty-services/rxjs-common';
+import { hardCache } from '@paddls/rxjs-common';
 import { CONFIG_URL_TOKEN } from './config.token';
 
 @Injectable()

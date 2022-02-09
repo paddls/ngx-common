@@ -1,12 +1,12 @@
 # NgxCommon
 
-![ngx-common-ci](https://github.com/witty-services/ngx-common/workflows/ngx-common-build/badge.svg)
-[![npm version](https://badge.fury.io/js/%40witty-services%2Fngx-common.svg)](https://badge.fury.io/js/%40witty-services%2Fngx-common)
-![GitHub](https://img.shields.io/github/license/witty-services/ngx-common)
-![GitHub repo size](https://img.shields.io/github/repo-size/witty-services/ngx-common)
-![GitHub last commit](https://img.shields.io/github/last-commit/witty-services/ngx-common)
-![GitHub issues](https://img.shields.io/github/issues/witty-services/ngx-common)
-![GitHub top language](https://img.shields.io/github/languages/top/witty-services/ngx-common)
+![ngx-common-ci](https://github.com/paddls/ngx-common/workflows/ngx-common-build/badge.svg)
+[![npm version](https://badge.fury.io/js/%40paddls%2Fngx-common.svg)](https://badge.fury.io/js/%40paddls%2Fngx-common)
+![GitHub](https://img.shields.io/github/license/paddls/ngx-common)
+![GitHub repo size](https://img.shields.io/github/repo-size/paddls/ngx-common)
+![GitHub last commit](https://img.shields.io/github/last-commit/paddls/ngx-common)
+![GitHub issues](https://img.shields.io/github/issues/paddls/ngx-common)
+![GitHub top language](https://img.shields.io/github/languages/top/paddls/ngx-common)
 
 ## Summary
 
@@ -19,7 +19,7 @@
 ## How to install
 
 ```
-npm install --save @witty-services/ngx-common
+npm install --save @paddls/ngx-common
 ```
 
 ## Get Started
@@ -30,7 +30,7 @@ Decorator ```@Log``` allow you to debug method without modifying internal code.
 
 Usage:
 ```typescript
-import {Log} from '@witty-services/ngx-commonn';
+import {Log} from '@paddls/ngx-commonn';
 import {environment} from '../../environment.ts';
 
 class MyClass {
@@ -61,7 +61,7 @@ Decorator ```@OnAttributeChange``` allow you to observe a class attribute with a
 
 Usage:
 ```typescript
-import {takeUntilDestroy, OnAttributeChange} from '@witty-services/ngx-common';
+import {takeUntilDestroy, OnAttributeChange} from '@paddls/ngx-common';
 import {Observable} from 'rxjs';
 
 class MyComponent {
@@ -87,7 +87,7 @@ takeUntilDestroy will automatically unsubscribe on component, directive destroy.
 
 Usage:
 ```typescript
-import {takeUntilDestroy} from '@witty-services/ngx-common';
+import {takeUntilDestroy} from '@paddls/ngx-common';
 import {interval} from 'rxjs';
 
 @OnDestroyListener()

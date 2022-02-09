@@ -1,10 +1,10 @@
 {
-  "name": "@witty-services/ngx-common",
-  "version": "2.0.1",
+  "name": "@paddls/ngx-common",
+  "version": "2.0.2-rc.0",
   "peerDependencies": {
     "@angular/common": ">= 6.0.0",
     "@angular/core": ">= 6.0.0",
-    "@witty-services/rxjs-common": ">= 1.0.9",
+    "@paddls/rxjs-common": ">= 1.3.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": ">= 6.0.0",
     "lodash": ">= 4.0.0"
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/witty-services/ngx-common"
+    "url": "http://github.com/paddls/ngx-common"
   },
-  "homepage": "http://github.com/witty-services/ngx-common#readme"
+  "homepage": "http://github.com/paddls/ngx-common#readme"
 }
