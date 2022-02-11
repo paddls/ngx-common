@@ -49,4 +49,27 @@ describe('takeUntilDestroy', () => {
     expect(a.subscription.closed).toBe(true);
     expect(a.destroyed).toBe(true);
   });
+
+  it('should unsubscribe on component destroy with extended classes', () => {
+    @OnDestroyListener()
+    class B {
+    }
+
+    class A extends B {
+
+      public subscription: Subscription;
+
+      public constructor() {
+        super();
+
+        this.subscription = interval(200).pipe(
+          takeUntilDestroy(this),
+        ).subscribe();
+      }
+    }
+    const a: A | any = new A();
+    expect(a.subscription.closed).toBe(false);
+    a.ngOnDestroy();
+    expect(a.subscription.closed).toBe(true);
+  });
 });

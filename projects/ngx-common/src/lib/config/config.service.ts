@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { hardCache } from '@paddls/rxjs-common';
