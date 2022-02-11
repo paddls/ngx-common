@@ -19,5 +19,5 @@ export function takeUntilDestroy<T>(instance: any): MonoTypeOperatorFunction<T> 
 }
 
 function hasDestroylistener(constructor: any): boolean {
-    return Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, constructor) || hasDestroylistener(constructor.__proto__);
+    return Reflect.hasOwnMetadata(DESTROY_LISTENER_METADATA_KEY, constructor) || (!!constructor?.__proto__ && hasDestroylistener(constructor.__proto__));
 }
