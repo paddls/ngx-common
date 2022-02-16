@@ -8,6 +8,10 @@
 ![GitHub issues](https://img.shields.io/github/issues/paddls/ngx-common)
 ![GitHub top language](https://img.shields.io/github/languages/top/paddls/ngx-common)
 
+## Informations
+
+> :warning: Since version 2.0.3, ```ngx-common``` and ```rxjs-common``` have been published under ```@paddls``` namespace. We continue to maintain ```@witty-services``` namespace, but now, ```ngx-common``` depends on ```@paddls/rxjs-common```
+
 ## Summary
 
 * [How to install](#how-to-install)
@@ -20,6 +24,10 @@
 
 ```
 npm install --save @paddls/ngx-common
+```
+or
+```
+npm install --save @witty-services/ngx-common
 ```
 
 ## Get Started
