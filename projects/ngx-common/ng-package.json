@@ -4,8 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@paddls/rxjs-common": "@paddls/rxjs-common",
-      "lodash": "lodash"
+      "@paddls/rxjs-common": "@paddls/rxjs-common"
     }
   }
 }

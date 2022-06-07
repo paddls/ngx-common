@@ -1,8 +1,6 @@
-import has from 'lodash-es/has';
-import isObject from 'lodash-es/isObject';
-import keys from 'lodash-es/keys';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { has, isObject } from '../util';
 
 @Injectable()
 export class NgxLocalStorageService {
@@ -18,7 +16,7 @@ export class NgxLocalStorageService {
   }
 
   public clear(): void {
-    for (const key of keys(this.storage)) {
+    for (const key of Object.keys(this.storage)) {
       this.remove(key);
     }
   }

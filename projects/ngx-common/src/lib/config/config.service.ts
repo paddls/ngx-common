@@ -1,10 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import get from 'lodash-es/get';
 import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { hardCache } from '@paddls/rxjs-common';
 import { CONFIG_URL_TOKEN } from './config.token';
+import {get} from '../util';
 
 @Injectable()
 export class NgxConfigService {
