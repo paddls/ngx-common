@@ -6,5 +6,10 @@
     "umdModuleIds": {
       "@paddls/rxjs-common": "@paddls/rxjs-common"
     }
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "lodash.has",
+    "lodash.isobject",
+    "lodash.get"
+  ]
 }

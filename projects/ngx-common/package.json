@@ -8,11 +8,14 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": ">= 6.0.0"
   },
-  "author": "Romain MARTINEAU, Valentin CLENET",
-  "license": "MIT",
   "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.has": "^4.5.2",
+    "lodash.isobject": "^3.0.2",
     "tslib": "^2.0.0"
   },
+  "author": "Romain MARTINEAU, Valentin CLENET",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://github.com/paddls/ngx-common"

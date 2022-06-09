@@ -1,6 +1,7 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { has, isObject } from '../util';
+import has from 'lodash.has';
+import isObject from 'lodash.isObject';
 
 @Injectable()
 export class NgxLocalStorageService {

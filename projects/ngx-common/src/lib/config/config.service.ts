@@ -4,7 +4,7 @@ import { pluck, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { hardCache } from '@paddls/rxjs-common';
 import { CONFIG_URL_TOKEN } from './config.token';
-import {get} from '../util';
+import get from 'lodash.get';
 
 @Injectable()
 export class NgxConfigService {
