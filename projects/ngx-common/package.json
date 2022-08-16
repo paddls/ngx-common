@@ -1,9 +1,9 @@
 {
   "name": "@paddls/ngx-common",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "peerDependencies": {
-    "@angular/common": ">= 6.0.0",
-    "@angular/core": ">= 6.0.0",
+    "@angular/common": ">= 12.0.0",
+    "@angular/core": ">= 12.0.0",
     "@paddls/rxjs-common": ">= 1.3.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": ">= 6.0.0"
