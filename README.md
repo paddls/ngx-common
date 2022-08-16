@@ -12,13 +12,20 @@
 
 > :warning: Since version 2.0.3, ```ngx-common``` and ```rxjs-common``` have been published under ```@paddls``` namespace. We continue to maintain ```@witty-services``` namespace, but now, ```ngx-common``` depends on ```@paddls/rxjs-common```
 
+| `Angular`          | `NgxCommon`       |
+|--------------------|-------------------|
+| `14.0.0` and above | `5.0.0` and above |
+| `13.0.0` and above | `4.0.0` and above |
+| `12.0.0` and above | `3.0.0` and above |
+| `6.0.0` and above  | `1.0.0` and above |
+
 ## Summary
 
 * [How to install](#how-to-install)
 * [Get Started](#get-started)
-    * [@Log](#log)
-    * [@OnAttributeChange](#onattributechange)
-    * [takeUntilDestroy](#takeuntildestroy)
+  * [@Log](#log)
+  * [@OnAttributeChange](#onattributechange)
+  * [takeUntilDestroy](#takeuntildestroy)
 
 ## How to install
 
