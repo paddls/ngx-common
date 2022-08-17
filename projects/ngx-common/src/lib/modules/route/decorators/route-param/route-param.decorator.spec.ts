@@ -8,7 +8,7 @@ import { NgxRouteModule } from '../../route.module';
 describe('RouteParamDecorator', () => {
 
   @Component({
-    selector: 'app-component',
+    selector: 'lib-component',
     template: ''
   })
   class MyComponent {
@@ -19,7 +19,7 @@ describe('RouteParamDecorator', () => {
   }
 
   @Directive({
-    selector: 'app-directive',
+    selector: '[libDirective]',
   })
   class MyDirective {
 

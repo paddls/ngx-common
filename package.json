@@ -1,7 +1,7 @@
 {
   "name": "@paddls/ngx-common",
   "version": "0.0.0",
-  "author": "Romain MARTINEAU",
+  "author": "Romain MARTINEAU, Valentin CLENET, Oscar GUERIN",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
