@@ -1,4 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgxLocalStorageService } from './local-storage.service';
 
 @NgModule()
 export class NgxLocalStorageModule {
@@ -7,7 +8,7 @@ export class NgxLocalStorageModule {
     return {
       ngModule: NgxLocalStorageModule,
       providers: [
-        NgxLocalStorageModule
+        NgxLocalStorageService
       ]
     };
   }

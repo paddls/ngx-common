@@ -27,7 +27,7 @@ export class NgxConfigService {
     );
   }
 
-  public getConfigSync(key: string): any {
+  public getConfigSnapshot(key: string): any {
     return get(this.config, key);
   }
 }
