@@ -14,11 +14,11 @@
     "lodash.isobject": "^3.0.2",
     "tslib": "^2.0.0"
   },
-  "author": "Romain MARTINEAU, Valentin CLENET",
+  "author": "Romain MARTINEAU, Valentin CLENET, Oscar GUERIN",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/paddls/ngx-common"
+    "url": "https://github.com/paddls/ngx-common"
   },
-  "homepage": "http://github.com/paddls/ngx-common#readme"
+  "homepage": "https://github.com/paddls/ngx-common#readme"
 }

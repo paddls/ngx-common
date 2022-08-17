@@ -23,16 +23,18 @@
 
 * [How to install](#how-to-install)
 * [Get Started](#get-started)
-  * [@Log](#log)
-  * [@OnAttributeChange](#onattributechange)
-  * [takeUntilDestroy](#takeuntildestroy)
+    * [@Log](#log)
+    * [@OnAttributeChange](#onattributechange)
+    * [takeUntilDestroy](#takeuntildestroy)
 
 ## How to install
 
 ```
 npm install --save @paddls/ngx-common
 ```
+
 or
+
 ```
 npm install --save @witty-services/ngx-common
 ```
@@ -44,25 +46,26 @@ npm install --save @witty-services/ngx-common
 Decorator ```@Log``` allow you to debug method without modifying internal code.
 
 Usage:
+
 ```typescript
-import {Log} from '@paddls/ngx-commonn';
-import {environment} from '../../environment.ts';
+import { Log } from '@paddls/ngx-common';
+import { environment } from '../../environment.ts';
 
 class MyClass {
 
   @Log()
   public myMethod(): any {
-  
+
   }
 
   @Log(!environment.production) // the log should be disabled on production
   public myMethod(): any {
-  
+
   }
 
   @Log(true, 'red') // override default log color
   public myMethod(): any {
-  
+
   }
 }
 
@@ -75,9 +78,10 @@ new MyClass().myMethod();
 Decorator ```@OnAttributeChange``` allow you to observe a class attribute with an observable.
 
 Usage:
+
 ```typescript
-import {takeUntilDestroy, OnAttributeChange} from '@paddls/ngx-common';
-import {Observable} from 'rxjs';
+import { takeUntilDestroy, OnAttributeChange } from '@paddls/ngx-common';
+import { Observable } from 'rxjs';
 
 class MyComponent {
 
@@ -92,7 +96,7 @@ class MyComponent {
     ).subscribe(() => {
       // do some stuff
     });
-  } 
+  }
 }
 ```
 
@@ -101,9 +105,10 @@ class MyComponent {
 takeUntilDestroy will automatically unsubscribe on component, directive destroy.
 
 Usage:
+
 ```typescript
-import {takeUntilDestroy} from '@paddls/ngx-common';
-import {interval} from 'rxjs';
+import { takeUntilDestroy } from '@paddls/ngx-common';
+import { interval } from 'rxjs';
 
 @OnDestroyListener()
 class MyComponent {
@@ -112,6 +117,6 @@ class MyComponent {
     interval(100).pipe(
       takeUntilDestroy(this), // this observable will be unsubscribe automatically on component destroy
     ).subscribe();
-  } 
+  }
 }
 ```

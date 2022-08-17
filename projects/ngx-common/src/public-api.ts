@@ -1,19 +1,22 @@
 import 'reflect-metadata';
 
-export { OnAttributeChange } from './lib/on-attribute-change/on-attribute-change.decorator';
-export { takeUntilDestroy } from './lib/take-until-destroy/take-until-destroy.operator';
-export { OnDestroyListener } from './lib/take-until-destroy/on-destroy-listener.decorator';
-export { Log } from './lib/log/log.decorator';
+export { OnAttributeChange } from './lib/decorators/on-attribute-change/on-attribute-change.decorator';
+export { takeUntilDestroy } from './lib/operators/take-until-destroy/take-until-destroy.operator';
+export { OnDestroyListener } from './lib/operators/take-until-destroy/on-destroy-listener.decorator';
+export { Log } from './lib/decorators/log/log.decorator';
+
 // error-handler
-export { handleError } from './lib/error-handler/operator/handle-error.operator';
-export { ErrorHandler } from './lib/error-handler/model/error-handler.model';
-export { NotImplementedError } from './lib/error-handler/model/not-implemented.error';
-export { RuntimeError } from './lib/error-handler/model/runtime.error';
-export { NgxErrorHandlerModule, ERROR_HANDLER_TOKEN } from './lib/error-handler/error-handler.module';
+export { handleError } from './lib/modules/error-handler/operator/handle-error.operator';
+export { ErrorHandler } from './lib/modules/error-handler/model/error-handler.model';
+export { NotImplementedError } from './lib/modules/error-handler/model/not-implemented.error';
+export { RuntimeError } from './lib/modules/error-handler/model/runtime.error';
+export { NgxErrorHandlerModule, ERROR_HANDLER_TOKEN } from './lib/modules/error-handler/error-handler.module';
+
 // local-storage
-export { NgxLocalStorageModule } from './lib/local-storage/local-storage.module';
-export { NgxLocalStorageService } from './lib/local-storage/local-storage.service';
+export { NgxLocalStorageModule } from './lib/modules/local-storage/local-storage.module';
+export { NgxLocalStorageService } from './lib/modules/local-storage/local-storage.service';
+
 // config
-export { NgxConfigModule } from './lib/config/config.module';
-export { CONFIG_URL_TOKEN } from './lib/config/config.token';
-export { NgxConfigService } from './lib/config/config.service';
+export { NgxConfigModule } from './lib/modules/config/config.module';
+export { CONFIG_URL_TOKEN } from './lib/modules/config/config.token';
+export { NgxConfigService } from './lib/modules/config/config.service';
