@@ -20,3 +20,7 @@ export { NgxLocalStorageService } from './lib/modules/local-storage/local-storag
 export { NgxConfigModule } from './lib/modules/config/config.module';
 export { CONFIG_URL_TOKEN } from './lib/modules/config/config.token';
 export { NgxConfigService } from './lib/modules/config/config.service';
+
+// route
+export { NgxRouteModule } from './lib/modules/route/route.module';
+export { RouteParam } from './lib/modules/route/decorators/route-param/route-param.decorator';
