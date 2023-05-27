@@ -2,8 +2,8 @@
   "name": "@paddls/ngx-common",
   "version": "6.0.0",
   "peerDependencies": {
-    "@angular/common": ">= 15.0.0",
-    "@angular/core": ">= 15.0.0",
+    "@angular/common": ">= 16.0.0",
+    "@angular/core": ">= 16.0.0",
     "@paddls/rxjs-common": ">= 2.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": ">= 7.0.0"
@@ -12,7 +12,7 @@
     "lodash.get": "^4.4.2",
     "lodash.has": "^4.5.2",
     "lodash.isobject": "^3.0.2",
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.0"
   },
   "author": "Romain MARTINEAU, Valentin CLENET, Oscar GUERIN",
   "license": "MIT",
