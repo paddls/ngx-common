@@ -14,6 +14,7 @@
 
 | `Angular`          | `NgxCommon`       |
 |--------------------|-------------------|
+| `18.0.0` and above | `9.0.0` and above |
 | `17.0.0` and above | `8.0.0` and above |
 | `16.0.0` and above | `7.0.0` and above |
 | `15.0.0` and above | `6.0.0` and above |
