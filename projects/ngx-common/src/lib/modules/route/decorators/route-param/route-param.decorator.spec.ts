@@ -1,66 +1,126 @@
-import { TestBed } from '@angular/core/testing';
-import { Component, Directive } from '@angular/core';
-import { RouteParam } from './route-param.decorator';
-import { ActivatedRoute } from '@angular/router';
-import { from, Observable } from 'rxjs';
-import { NgxRouteModule } from '../../route.module';
+import {TestBed} from '@angular/core/testing';
+import {Component, Directive} from '@angular/core';
+import {RouteParam} from './route-param.decorator';
+import {ActivatedRoute} from '@angular/router';
+import {from, Observable} from 'rxjs';
+import {NgxRouteModule, provideNgxRoute} from '../../route.module';
 
 describe('RouteParamDecorator', () => {
 
-  @Component({
-    selector: 'lib-component',
-    template: ''
-  })
-  class MyComponent {
+    @Component({
+        selector: 'lib-component',
+        template: ''
+    })
+    class MyComponent {
 
-    @RouteParam('paramKey')
-    public readonly routeParam$: Observable<string>;
+        @RouteParam('paramKey')
+        public readonly routeParam$: Observable<string>;
 
-  }
+    }
 
-  @Directive({
-    selector: '[libDirective]',
-  })
-  class MyDirective {
+    @Directive({
+        selector: '[libDirective]',
+    })
+    class MyDirective {
 
-    @RouteParam('paramKey')
-    public readonly routeParam$: Observable<string>;
-  }
+        @RouteParam('paramKey')
+        public readonly routeParam$: Observable<string>;
+    }
 
-  let component: MyComponent;
-  let directive: MyDirective;
+    let component: MyComponent;
+    let directive: MyDirective;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        NgxRouteModule
-      ],
-      declarations: [
-        MyComponent,
-        MyDirective
-      ],
-      providers: [
-        MyComponent,
-        MyDirective,
-        {
-          provide: ActivatedRoute,
-          useValue: {
-            paramMap: from([{get: (key: string) => `${ key }:first`}])
-          }
-        }
-      ]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                MyComponent,
+                MyDirective
+            ],
+            providers: [
+                MyComponent,
+                MyDirective,
+                provideNgxRoute(),
+                {
+                    provide: ActivatedRoute,
+                    useValue: {
+                        paramMap: from([{get: (key: string) => `${key}:first`}])
+                    }
+                }
+            ]
+        });
+
+        component = TestBed.inject(MyComponent);
+        directive = TestBed.inject(MyDirective);
     });
 
-    component = TestBed.inject(MyComponent);
-    directive = TestBed.inject(MyDirective);
-  });
+    it('should subscribe to param map in components', (done: DoneFn) => {
+        component.routeParam$.subscribe((value: string) => {
+            console.log(value);
+            expect(value).toEqual('paramKey:first');
 
-  it('should subscribe to param map in components', (done: DoneFn) => {
-    component.routeParam$.subscribe((value: string) => {
-      expect(value).toEqual('paramKey:first');
-
-      done();
+            done();
+        });
     });
-  });
+
+});
+
+describe('RouteParamDecorator injected via Module', () => {
+
+    @Component({
+        selector: 'lib-component',
+        template: ''
+    })
+    class MyComponent {
+
+        @RouteParam('paramKey')
+        public readonly routeParam$: Observable<string>;
+
+    }
+
+    @Directive({
+        selector: '[libDirective]',
+    })
+    class MyDirective {
+
+        @RouteParam('paramKey')
+        public readonly routeParam$: Observable<string>;
+    }
+
+    let component: MyComponent;
+    let directive: MyDirective;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [
+              NgxRouteModule
+            ],
+            declarations: [
+                MyComponent,
+                MyDirective
+            ],
+            providers: [
+                MyComponent,
+                MyDirective,
+                {
+                    provide: ActivatedRoute,
+                    useValue: {
+                        paramMap: from([{get: (key: string) => `${key}:first`}])
+                    }
+                }
+            ]
+        });
+
+        component = TestBed.inject(MyComponent);
+        directive = TestBed.inject(MyDirective);
+    });
+
+    it('should subscribe to param map in components', (done: DoneFn) => {
+        component.routeParam$.subscribe((value: string) => {
+            console.log(value);
+            expect(value).toEqual('paramKey:first');
+
+            done();
+        });
+    });
 
 });
