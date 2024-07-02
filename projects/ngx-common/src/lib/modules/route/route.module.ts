@@ -1,14 +1,25 @@
-import { Injector, NgModule } from '@angular/core';
+import {APP_INITIALIZER, Injector, NgModule, Provider} from '@angular/core';
+
+export function provideNgxRoute(): Provider[] {
+  return [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (injector: Injector) => (): void => {
+        NgxRouteModule.injector = injector;
+      },
+      multi: true,
+      deps: [Injector]
+    }
+  ]
+}
 
 // @dynamic
-@NgModule()
+@NgModule({
+  providers: provideNgxRoute()
+})
 export class NgxRouteModule {
 
-  private static injector: Injector;
-
-  public constructor(injector: Injector) {
-    NgxRouteModule.injector = injector;
-  }
+  public static injector: Injector;
 
   public static getInjector(): Injector {
     return NgxRouteModule.injector;
