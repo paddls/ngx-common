@@ -18,13 +18,7 @@ export class NgxConfigModule {
     public static forRoot(url: string): ModuleWithProviders<NgxConfigModule> {
         return {
             ngModule: NgxConfigModule,
-            providers: [
-                NgxConfigService,
-                {
-                    provide: CONFIG_URL_TOKEN,
-                    useValue: url
-                }
-            ]
+            providers: provideNgxConfig(url)
         };
     }
 }
