@@ -10,7 +10,7 @@ export { handleError } from './lib/modules/error-handler/operator/handle-error.o
 export { ErrorHandler } from './lib/modules/error-handler/model/error-handler.model';
 export { NotImplementedError } from './lib/modules/error-handler/model/not-implemented.error';
 export { RuntimeError } from './lib/modules/error-handler/model/runtime.error';
-export { NgxErrorHandlerModule, ERROR_HANDLER_TOKEN } from './lib/modules/error-handler/error-handler.module';
+export { NgxErrorHandlerModule, ERROR_HANDLER_TOKEN, provideErrorHandler } from './lib/modules/error-handler/error-handler.module';
 
 // local-storage
 export { NgxLocalStorageModule } from './lib/modules/local-storage/local-storage.module';

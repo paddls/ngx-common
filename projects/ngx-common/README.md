@@ -12,16 +12,17 @@
 
 > :warning: Since version 2.0.3, ```ngx-common``` and ```rxjs-common``` have been published under ```@paddls``` namespace. We continue to maintain ```@witty-services``` namespace, but now, ```ngx-common``` depends on ```@paddls/rxjs-common```
 
-| `Angular`          | `NgxCommon`       |
-|--------------------|-------------------|
-| `18.0.0` and above | `9.0.0` and above |
-| `17.0.0` and above | `8.0.0` and above |
-| `16.0.0` and above | `7.0.0` and above |
-| `15.0.0` and above | `6.0.0` and above |
-| `14.0.0` and above | `5.0.0` and above |
-| `13.0.0` and above | `4.0.0` and above |
-| `12.0.0` and above | `3.0.0` and above |
-| `6.0.0` and above  | `1.0.0` and above |
+| `Angular`          | `NgxCommon`        |
+|--------------------|--------------------|
+| `19.0.0` and above | `10.0.0` and above |
+| `18.0.0` and above | `9.0.0` and above  |
+| `17.0.0` and above | `8.0.0` and above  |
+| `16.0.0` and above | `7.0.0` and above  |
+| `15.0.0` and above | `6.0.0` and above  |
+| `14.0.0` and above | `5.0.0` and above  |
+| `13.0.0` and above | `4.0.0` and above  |
+| `12.0.0` and above | `3.0.0` and above  |
+| `6.0.0` and above  | `1.0.0` and above  |
 
 ## Summary
 
@@ -97,11 +98,11 @@ class MyComponent {
 First, import `NgxErrorHandlerModule` in your root module :
 
 ```typescript
-import { NgxErrorHandlerModule } from '@paddls/ngx-common';
+import { provideErrorHandler } from '@paddls/ngx-common';
 
 @NgModule({
-  imports: [
-    NgxErrorHandlerModule.forRoot([
+  providers: [
+    provideErrorHandler([
       MyErrorHandler
     ]),
   ]
